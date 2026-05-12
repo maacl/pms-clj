@@ -147,3 +147,34 @@ clj꞉maacl.pms-clj꞉> 
   (s/or :prj (s/keys :req-un [:project/name :project/id])
         :prj-group (s/keys :req-un [:project/name :project/prj-list])))
 clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+; Evaluation of file pms_clj.clj failed: class java.io.FileNotFoundException
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+(ns maacl.pms-clj
+  (:require [clojure.spec.alpha :as s]
+            [clojure.spec.gen.alpha :as gen]
+            [clojure.spec.test.alpha :as stest]
+            [hiccup2.core :as h])
+  (:gen-class))
+; Execution error (FileNotFoundException) at maacl.pms-clj/eval10017$loading (pms_clj.clj:1).
+; Could not locate hiccup2/core__init.class, hiccup2/core.clj or hiccup2/core.cljc on classpath.
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+(ns maacl.pms-clj
+  (:require [clojure.spec.alpha :as s]
+            [clojure.spec.gen.alpha :as gen]
+            [clojure.spec.test.alpha :as stest]
+            [hiccup2.core :as h])
+  (:gen-class))
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 

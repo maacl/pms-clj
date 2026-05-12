@@ -1,7 +1,8 @@
 (ns maacl.pms-clj
   (:require [clojure.spec.alpha :as s]
             [clojure.spec.gen.alpha :as gen]
-            [clojure.spec.test.alpha :as stest])
+            [clojure.spec.test.alpha :as stest]
+            [hiccup2.core :as h])
   (:gen-class))
 
 (comment "This is a small experiment inspired by Oskar Wickströms
@@ -63,6 +64,34 @@
 
 (defmethod pp-project :default [{:keys [id name] {:keys [budget-profit net-profit difference] :as report} :report} & [_]]
   (str " " name " [" id "] " "Budg.p.: " budget-profit " Net.p.: " net-profit " Diff.: " difference))
+
+;; Generates a hiccup HTML tree from a project structure.
+;; Dispatches on :id — nil means a project group (has :prj-list), :default means a leaf project.
+(defmulti project->html (fn [p] (:id p)))
+
+(defmethod project->html nil [{:keys [name prj-list]
+                               {:keys [budget-profit net-profit difference]} :report}]
+  [:div {:class "project-group"}
+   [:h3 name]
+   (when (or budget-profit net-profit difference)
+     [:p {:class "report"}
+      (str "Budg.p.: " budget-profit " Net.p.: " net-profit " Diff.: " difference)])
+   [:ul
+    (for [p prj-list]
+      [:li (project->html p)])]])
+
+(defmethod project->html :default [{:keys [id name]
+                                    {:keys [budget-profit net-profit difference]} :report}]
+  [:div {:class "project"}
+   [:strong (str name " [" id "]")]
+   (when (or budget-profit net-profit difference)
+     [:span {:class "report"}
+      (str " — Budg.p.: " budget-profit " Net.p.: " net-profit " Diff.: " difference)])])
+
+(defn render-project-html
+  "Renders a project structure to an HTML string using hiccup."
+  [p]
+  (str (h/html (project->html p))))
 
 ;; get-budget and get-transactions just produce dummy budgets and transaction lists, ignoring the project id provided.
 (defn get-budget [_]
@@ -129,4 +158,10 @@
   (print (pp-project (calculate-project-report some-project)))
 
   ;; This will generate an print example project structures incl. reporting.
-  (print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))))
+  (print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+
+  ;; Render as HTML
+  (println (render-project-html (calculate-project-report some-project)))
+
+  (spit "project-report.html"
+        (render-project-html (calculate-project-report some-project))))
