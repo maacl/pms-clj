@@ -1,0 +1,149 @@
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+; Execution error (FileNotFoundException) at maacl.pms-clj/eval9755 (pms_clj.clj:132).
+; Could not locate clojure/test/check/generators__init.class, clojure/test/check/generators.clj or clojure/test/check/generators.cljc on classpath.
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+; Execution error (FileNotFoundException) at maacl.pms-clj/eval9737 (pms_clj.clj:132).
+; Could not locate clojure/test/check/generators__init.class, clojure/test/check/generators.clj or clojure/test/check/generators.cljc on classpath.
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(print (pp-project (calculate-project-report (first (gen/sample (s/gen ::project) 1)))))
+clj꞉maacl.pms-clj꞉> 
+(s/def ::project
+  (s/or :prj (s/keys :req-un [:project/name :project/id])
+        :prj-group (s/keys :req-un [:project/name :project/prj-list])))
+clj꞉maacl.pms-clj꞉> 
