@@ -1,1 +1,85 @@
-<div class="project-group"><h3>Sweden</h3><p class="report">Budg.p.: -12693.55 Net.p.: -6270.27 Diff.: 6423.28</p><ul><li><div class="project-group"><h3>Stockholm</h3><p class="report">Budg.p.: 5013.11 Net.p.: -1801.77 Diff.: -6814.88</p><ul><li><div class="project"><strong>Djurgaarden [1]</strong><span class="report"> — Budg.p.: 1899.38 Net.p.: 69.84 Diff.: -1829.54</span></div></li><li><div class="project"><strong>Skaergaarden [2]</strong><span class="report"> — Budg.p.: 3113.73 Net.p.: -1871.61 Diff.: -4985.34</span></div></li></ul></div></li><li><div class="project"><strong>Gothenborg [3]</strong><span class="report"> — Budg.p.: -2943.15 Net.p.: -893.60 Diff.: 2049.55</span></div></li><li><div class="project-group"><h3>Malmo</h3><p class="report">Budg.p.: -16911.84 Net.p.: -2269.02 Diff.: 14642.82</p><ul><li><div class="project-group"><h3>Malmo City</h3><p class="report">Budg.p.: -14559.08 Net.p.: -3066.48 Diff.: 11492.60</p><ul><li><div class="project"><strong>Fosie1 [41]</strong><span class="report"> — Budg.p.: -2859.36 Net.p.: 227.79 Diff.: 3087.15</span></div></li><li><div class="project"><strong>Fosie2 [42]</strong><span class="report"> — Budg.p.: -5638.28 Net.p.: -828.06 Diff.: 4810.22</span></div></li><li><div class="project-group"><h3>Fosie3</h3><p class="report">Budg.p.: -2534.22 Net.p.: 1226.52 Diff.: 3760.74</p><ul><li><div class="project"><strong>Djurgaarden [31]</strong><span class="report"> — Budg.p.: 3527.96 Net.p.: 511.08 Diff.: -3016.88</span></div></li><li><div class="project"><strong>Skaergaarden [32]</strong><span class="report"> — Budg.p.: -6062.18 Net.p.: 715.44 Diff.: 6777.62</span></div></li></ul></div></li><li><div class="project"><strong>Rosengaard [5]</strong><span class="report"> — Budg.p.: -3527.22 Net.p.: -3692.73 Diff.: -165.51</span></div></li></ul></div></li><li><div class="project-group"><h3>Limhamn</h3><p class="report">Budg.p.: -2352.76 Net.p.: 797.46 Diff.: 3150.22</p><ul><li><div class="project"><strong>Kalkbrottet [6]</strong><span class="report"> — Budg.p.: -77.13 Net.p.: 1588.26 Diff.: 1665.39</span></div></li><li><div class="project"><strong>Sibbarp [7]</strong><span class="report"> — Budg.p.: -2275.63 Net.p.: -790.8 Diff.: 1484.83</span></div></li></ul></div></li></ul></div></li><li><div class="project"><strong>Eskilstuna [4]</strong><span class="report"> — Budg.p.: 2148.33 Net.p.: -1305.88 Diff.: -3454.21</span></div></li></ul></div>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1" name="viewport" /><title>Project Report</title><style>body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #eef1f5;
+    color: #1c2b3a;
+    margin: 0;
+    padding: 1rem;
+}
+
+.project-group {
+    background: #ffffff;
+    border: 1px solid #cdd6e0;
+    border-left: 4px solid #4a6b8a;
+    border-radius: 8px;
+    padding: 0.5rem 0.15rem;
+    margin: 0.25rem 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+}
+
+.project-group h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #4a6b8a;
+}
+
+ul,
+li {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.project-group&gt;ul {
+    padding-left: 0;
+    margin: 0.25rem 0 0 0;
+    border-left: 2px dashed #cdd6e0;
+}
+
+.project-group&gt;ul&gt;li {
+    margin: 0.2rem 0;
+}
+
+.project {
+    margin: 0.4rem 0;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    background: #f4f7fa;
+    border: 1px solid #cdd6e0;
+    border-radius: 6px;
+    padding: 0.2rem 0.375rem;
+}
+
+.project strong {
+    color: #2c5070;
+    font-size: 0.95rem;
+}
+
+.report {
+    font-size: 0.8rem;
+    color: #5a7080;
+    font-variant-numeric: tabular-nums;
+}
+
+.project-group&gt;.report {
+    display: block;
+    margin-bottom: 0.125rem;
+}
+
+.positive {
+    color: #2e7d46;
+    font-weight: 500;
+}
+
+.negative {
+    color: #b83232;
+    font-weight: 500;
+}
+
+.zero {
+    color: #5a7080;
+}</style></head><body><div class="project-group"><h3>Sweden</h3><p class="report">Budg.p.: <span class="negative">-13112.13</span> Net.p.: <span class="negative">-6280.24</span> Diff.: <span class="positive">6831.89</span></p><ul><li><div class="project-group"><h3>Stockholm</h3><p class="report">Budg.p.: <span class="negative">-5041.12</span> Net.p.: <span class="negative">-1148.71</span> Diff.: <span class="positive">3892.41</span></p><ul><li><div class="project"><strong>Djurgaarden [1]</strong><span class="report"> — Budg.p.: <span class="negative">-8184.79</span> Net.p.: <span class="negative">-1365.48</span> Diff.: <span class="positive">6819.31</span></span></div></li><li><div class="project"><strong>Skaergaarden [2]</strong><span class="report"> — Budg.p.: <span class="positive">3143.67</span> Net.p.: <span class="positive">216.77</span> Diff.: <span class="negative">-2926.90</span></span></div></li></ul></div></li><li><div class="project"><strong>Gothenborg [3]</strong><span class="report"> — Budg.p.: <span class="negative">-2387.27</span> Net.p.: <span class="negative">-494.77</span> Diff.: <span class="positive">1892.50</span></span></div></li><li><div class="project-group"><h3>Malmo</h3><p class="report">Budg.p.: <span class="negative">-5156.84</span> Net.p.: <span class="negative">-4114.49</span> Diff.: <span class="positive">1042.35</span></p><ul><li><div class="project-group"><h3>Malmo City</h3><p class="report">Budg.p.: <span class="positive">4031.06</span> Net.p.: <span class="negative">-7554.88</span> Diff.: <span class="negative">-11585.94</span></p><ul><li><div class="project"><strong>Fosie1 [41]</strong><span class="report"> — Budg.p.: <span class="negative">-7988.99</span> Net.p.: <span class="negative">-633.75</span> Diff.: <span class="positive">7355.24</span></span></div></li><li><div class="project"><strong>Fosie2 [42]</strong><span class="report"> — Budg.p.: <span class="negative">-539.89</span> Net.p.: <span class="negative">-2940.06</span> Diff.: <span class="negative">-2400.17</span></span></div></li><li><div class="project-group"><h3>Fosie3</h3><p class="report">Budg.p.: <span class="positive">7862.56</span> Net.p.: <span class="negative">-2465.06</span> Diff.: <span class="negative">-10327.62</span></p><ul><li><div class="project"><strong>Djurgaarden [31]</strong><span class="report"> — Budg.p.: <span class="positive">2706.51</span> Net.p.: <span class="negative">-1148.86</span> Diff.: <span class="negative">-3855.37</span></span></div></li><li><div class="project"><strong>Skaergaarden [32]</strong><span class="report"> — Budg.p.: <span class="positive">5156.05</span> Net.p.: <span class="negative">-1316.20</span> Diff.: <span class="negative">-6472.25</span></span></div></li></ul></div></li><li><div class="project"><strong>Rosengaard [5]</strong><span class="report"> — Budg.p.: <span class="positive">4697.38</span> Net.p.: <span class="negative">-1516.01</span> Diff.: <span class="negative">-6213.39</span></span></div></li></ul></div></li><li><div class="project-group"><h3>Limhamn</h3><p class="report">Budg.p.: <span class="negative">-9187.90</span> Net.p.: <span class="positive">3440.39</span> Diff.: <span class="positive">12628.29</span></p><ul><li><div class="project"><strong>Kalkbrottet [6]</strong><span class="report"> — Budg.p.: <span class="negative">-5030.02</span> Net.p.: <span class="positive">1001.05</span> Diff.: <span class="positive">6031.07</span></span></div></li><li><div class="project"><strong>Sibbarp [7]</strong><span class="report"> — Budg.p.: <span class="negative">-4157.88</span> Net.p.: <span class="positive">2439.34</span> Diff.: <span class="positive">6597.22</span></span></div></li></ul></div></li></ul></div></li><li><div class="project"><strong>Eskilstuna [4]</strong><span class="report"> — Budg.p.: <span class="negative">-526.90</span> Net.p.: <span class="negative">-522.27</span> Diff.: <span class="positive">4.63</span></span></div></li></ul></div></body></html>

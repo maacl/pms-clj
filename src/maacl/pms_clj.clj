@@ -1,8 +1,9 @@
 (ns maacl.pms-clj
-  (:require [clojure.spec.alpha :as s]
+  (:require [clojure.java.io :as io]
+            [clojure.spec.alpha :as s]
             [clojure.spec.gen.alpha :as gen]
-            [clojure.spec.test.alpha :as stest]
-            [hiccup2.core :as h])
+            [hiccup2.core :as h]
+            [weave.core :as weave])
   (:gen-class))
 
 (comment "This is a small experiment inspired by Oskar Wickströms
@@ -44,13 +45,13 @@
 (s/def :report/budget-profit ::money)
 (s/def :report/net-profit ::money)
 (s/def :report/difference ::money)
-(s/def ::report (s/keys :req-un [:report/budget-profit :report/net-profit :report/budget-profit]))
+(s/def ::report (s/keys :req-un [:report/budget-profit :report/net-profit :report/difference]))
 
 ;; This is a simple pretty-printer for a project structure. 
 ;; I was somewhat surprised that I couldn't find a generic tree pretty printer, but maybe I missed it.
 (defmulti pp-project (fn [p & [_]] (:id p)))
 (defmethod pp-project nil [{:keys [name prj-list]
-                            {:keys [budget-profit net-profit difference] :as report} :report}
+                            {:keys [budget-profit net-profit difference]} :report}
                            & [indent]]
   (let [indent (or indent "")]
     (str name " - " "Budg.p.: " budget-profit " Net.p.: " net-profit " Diff.: " difference "\n"
@@ -62,8 +63,17 @@
          indent "|\n" indent "`-"
          (pp-project (last prj-list) (str indent "  ")))))
 
-(defmethod pp-project :default [{:keys [id name] {:keys [budget-profit net-profit difference] :as report} :report} & [_]]
+(defmethod pp-project :default [{:keys [id name] {:keys [budget-profit net-profit difference]} :report} & [_]]
   (str " " name " [" id "] " "Budg.p.: " budget-profit " Net.p.: " net-profit " Diff.: " difference))
+
+(defn- format-amount [v]
+  (when v
+    [:span {:class (cond (pos? v) "positive" (neg? v) "negative" :else "zero")} (str v)]))
+
+(defn- report-fields [budget-profit net-profit difference]
+  (list "Budg.p.: "  (format-amount budget-profit)
+        " Net.p.: "  (format-amount net-profit)
+        " Diff.: "   (format-amount difference)))
 
 ;; Generates a hiccup HTML tree from a project structure.
 ;; Dispatches on :id — nil means a project group (has :prj-list), :default means a leaf project.
@@ -74,8 +84,7 @@
   [:div {:class "project-group"}
    [:h3 name]
    (when (or budget-profit net-profit difference)
-     [:p {:class "report"}
-      (str "Budg.p.: " budget-profit " Net.p.: " net-profit " Diff.: " difference)])
+     (into [:p {:class "report"}] (report-fields budget-profit net-profit difference)))
    [:ul
     (for [p prj-list]
       [:li (project->html p)])]])
@@ -85,13 +94,22 @@
   [:div {:class "project"}
    [:strong (str name " [" id "]")]
    (when (or budget-profit net-profit difference)
-     [:span {:class "report"}
-      (str " — Budg.p.: " budget-profit " Net.p.: " net-profit " Diff.: " difference)])])
+     (into [:span {:class "report"} " — "] (report-fields budget-profit net-profit difference)))])
 
 (defn render-project-html
-  "Renders a project structure to an HTML string using hiccup."
+  "Renders a project structure as a full HTML document string."
   [p]
-  (str (h/html (project->html p))))
+  (str
+   "<!DOCTYPE html>"
+   (h/html
+    [:html {:lang "en"}
+     [:head
+      [:meta {:charset "utf-8"}]
+      [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+      [:title "Project Report"]
+      [:style (slurp (io/resource "report.css"))]]
+     [:body
+      (project->html p)]])))
 
 ;; get-budget and get-transactions just produce dummy budgets and transaction lists, ignoring the project id provided.
 (defn get-budget [_]
@@ -154,7 +172,29 @@
               {:id 4
                :name "Eskilstuna"}]})
 
+(defn view []
+  (weave/push-html!
+   [:html {:lang "en"}
+    [:head
+     [:meta {:charset "utf-8"}]
+     [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+     [:title "Project Report"]
+     [:style (slurp (io/resource "report.css"))]]
+    [:body
+     [:div {:id "report-container"}]]])
+  (while
+   true
+    (Thread/sleep 500)
+    (weave/push-html!
+     [:div {:id "report-container"}
+      (project->html (calculate-project-report (first (gen/sample (s/gen ::project) 1))))])))
+
+(defn -main []
+  (weave/run #'view {:tailwind false}))
+
+
 (comment
+  (-main)
   (print (pp-project (calculate-project-report some-project)))
 
   ;; This will generate an print example project structures incl. reporting.

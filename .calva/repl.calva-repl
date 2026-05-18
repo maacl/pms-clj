@@ -178,3 +178,294 @@ clj꞉maacl.pms-clj꞉> 
 (spit "project-report.html"
         (render-project-html (calculate-project-report some-project)))
 clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(defn render-project-html
+  "Renders a project structure as a full HTML document string."
+  [p]
+  (str
+   "<!DOCTYPE html>"
+   (h/html
+    [:html {:lang "en"}
+     [:head
+      [:meta {:charset "utf-8"}]
+      [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+      [:title "Project Report"]
+      [:style report-css]]
+     [:body
+      (project->html p)]])))
+; Syntax error compiling at (src/maacl/pms_clj.clj:151:4).
+; Unable to resolve symbol: report-css in this context
+clj꞉maacl.pms-clj꞉> 
+(render-project-html (calculate-project-report some-project))
+clj꞉maacl.pms-clj꞉> 
+(calculate-project-report some-project)
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+(ns maacl.pms-clj
+  (:require [clojure.java.io :as io]
+            [clojure.spec.alpha :as s]
+            [clojure.spec.gen.alpha :as gen]
+            [hiccup2.core :as h]))
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+; Syntax error compiling at (src/maacl/pms_clj.clj:184:9).
+; Unable to resolve symbol: render-project-html in this context
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(spit "project-report.html"
+        (render-project-html (calculate-project-report some-project)))
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+(ns maacl.pms-clj
+  (:require [clojure.java.io :as io]
+            [clojure.spec.alpha :as s]
+            [clojure.spec.gen.alpha :as gen]
+            [hiccup2.core :as h]
+            [weave.core :as weave])
+  (:gen-class))
+clj꞉maacl.pms-clj꞉> 
+(defn view []
+  [:div.p-6
+   [:h1#label.text-2xl.font-bold "Hello Weave!"]
+   [:button.bg-blue-500.text-white.px-4.py-2.rounded
+    {:data-on:click
+     (weave/handler []
+                    (weave/push-html!
+                     [:h1#label.text-2xl.font-bold "Button was clicked!"]))}
+    "CLICK ME"]])
+clj꞉maacl.pms-clj꞉> 
+(defn -main []
+  (weave/run view {}))
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(defn view []
+  [:html {:lang "en"}
+   [:head
+    [:meta {:charset "utf-8"}]
+    [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+    [:title "Project Report"]
+    [:style (slurp (io/resource "report.css"))]]
+   [:body
+    (project->html  (calculate-project-report some-project))]])
+; Syntax error compiling at (src/maacl/pms_clj.clj:183:5).
+; Unable to resolve symbol: project->html in this context
+clj꞉maacl.pms-clj꞉> 
+(defn view []
+  [:html {:lang "en"}
+   [:head
+    [:meta {:charset "utf-8"}]
+    [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+    [:title "Project Report"]
+    [:style (slurp (io/resource "report.css"))]]
+   [:body
+    (project->html  (calculate-project-report some-project))]])
+clj꞉maacl.pms-clj꞉> 
+(defn -main []
+  (weave/run view {}))
+clj꞉maacl.pms-clj꞉> 
+(-main)
+; Execution error (BindException) at sun.nio.ch.Net/bind0 (Net.java:-2).
+; Address already in use
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(defn view []
+  [:html {:lang "en"}
+   [:head
+    [:meta {:charset "utf-8"}]
+    [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+    [:title "Project Report"]
+    [:style (slurp (io/resource "report.css"))]]
+   [:body
+    (project->html  (calculate-project-report some-project))]])
+clj꞉maacl.pms-clj꞉> 
+(defn view []
+  [:html {:lang "en"}
+   [:head
+    [:meta {:charset "utf-8"}]
+    [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+    [:title "Project Report"]
+    [:style (slurp (io/resource "report.css"))]]
+   [:body
+    (project->html (calculate-project-report (first (gen/sample (s/gen ::project) 1))))]])
+clj꞉maacl.pms-clj꞉> 
+(defn -main []
+  (weave/run view {}))
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(defn view []
+  (while
+   true
+    (Thread/sleep 500)
+    (weave/push-html!
+     [:html {:lang "en"}
+      [:head
+       #_[:meta {:http-equiv "refresh" :content 0.5}]
+       [:meta {:charset "utf-8"}]
+       [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+       [:title "Project Report"]
+       [:style (slurp (io/resource "report.css"))]]
+      [:body
+       (project->html (calculate-project-report (first (gen/sample (s/gen ::project) 1))))]])))
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(-main)
+; Execution error (BindException) at sun.nio.ch.Net/bind0 (Net.java:-2).
+; Address already in use
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(defn -main []
+  (weave/run #'view {:tailwind false}))
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
+(defn view []
+  (weave/push-html!
+   [:html {:lang "en"}
+    [:head
+     [:meta {:charset "utf-8"}]
+     [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+     [:title "Project Report"]
+     [:style (slurp (io/resource "report.css"))]]
+    [:body
+     [:div {:id "report-container"}]]])
+  (while
+   true
+    (Thread/sleep 500)
+    (weave/push-html!
+     [:div {:id "report-container"}
+      (project->html (calculate-project-report (first (gen/sample (s/gen ::project) 1))))])))
+clj꞉maacl.pms-clj꞉> 
