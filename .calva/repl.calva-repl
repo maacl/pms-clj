@@ -469,3 +469,12 @@ clj꞉maacl.pms-clj꞉> 
      [:div {:id "report-container"}
       (project->html (calculate-project-report (first (gen/sample (s/gen ::project) 1))))])))
 clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+; Evaluation of file pms_clj.clj failed: class java.io.FileNotFoundException
+clj꞉maacl.pms-clj꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉maacl.pms-clj꞉> 
+(-main)
+clj꞉maacl.pms-clj꞉> 
